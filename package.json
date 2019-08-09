@@ -16,7 +16,9 @@
     "test-cov": "jest --coverage",
     "test-ci": "jest --coverage",
     "build": "webpack --config ./webpack.config.js",
-    "badges": "npm run test-cov && jest-coverage-badges input ./coverage/coverage-summary.json output .badges/"
+    "badges": "npm run test-cov && jest-coverage-badges input ./coverage/coverage-summary.json output .badges/",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "files": [
     "lib",
@@ -45,6 +47,10 @@
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-links": "^5.1.10",
+    "@storybook/addons": "^5.1.10",
+    "@storybook/react": "^5.1.10",
     "@testing-library/react": "^8.0.8",
     "babel-loader": "^8.0.5",
     "cross-env": "^1.0.7",
@@ -60,12 +66,17 @@
     "jest-coverage-badges": "^1.1.2",
     "prettier": "^1.15.3",
     "pretty-quick": "~1.10.0",
-    "prop-types": "~15.7.2",
+    "prop-types": "^15.7.2",
     "react": "~16.9.0",
+    "react-dom": "^16.9.0",
     "rimraf": "^2.5.2",
     "typings-tester": "^0.3.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash.findindex": "^4.6.0",
+    "react-click-outside": "^3.0.1",
+    "react-input-autosize": "^2.2.1"
+  }
 }
