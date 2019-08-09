@@ -1,6 +1,6 @@
 import findIndex from 'lodash.findindex';
 import { func, arrayOf, shape, string, number, bool } from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 // https://github.com/kentor/react-click-outside
 import enhanceWithClickOutside from 'react-click-outside';
 // https://github.com/JedWatson/react-input-autosize/
@@ -24,7 +24,7 @@ class ReactBoxesSelector extends Component {
     // but we dont want to depend on Redux and actions to know which are the menuitems afeter select some of option
     static propTypes = {
         onReset: func,
-        onSelect: func,
+        onSelect: func, // pass a callback to read current selected items on each select/unselect event
         menuItems: arrayOf(shape({
             displayValue: string,
             value: string,
@@ -50,6 +50,7 @@ class ReactBoxesSelector extends Component {
     }
 
     /**
+     * PROBABLY WE WONT NEED THIS
      * @param {Object} nextProps
      * @param {Object} prevState
      * @returns {Null | Object} new state
@@ -79,18 +80,19 @@ class ReactBoxesSelector extends Component {
         });
     }
 
-    inputRef = React.createRef();
+    inputRef = createRef();
 
-    overlayRef = React.createRef();
+    overlayRef = createRef();
 
-    inputXRef = React.createRef();
+    inputXRef = createRef();
 
     componentDidUpdate () {
-        const inputXLines = this.inputXRef.current.scrollHeight;
-        this.inputXRef.current.scrollTop = inputXLines || 1000;
+        const input = this.inputXRef.current;
+        input.scrollTop = input.scrollHeight || 1000;
     }
     /**
-     * 
+     * TODO PUT DEBOUNCER?
+     * @description On writting updates internal state
      * @param {Object} event
      * @returns {Undefined}
      */
@@ -98,41 +100,54 @@ class ReactBoxesSelector extends Component {
         this.setState({ searchTerm: event.target.value });
     }
     /**
-     * 
+     * @description Add clicked item to the list of selected items
      * @param {Object} event
      * @returns {Undefined}
      */
     handleOptionClick (event) {
-        const selectedItem = this.props.menuItems.filter((el) => {
+        const { menuItems } = this.props;
+        const { selectedItems } = this.state;
+
+        const selectedItem = menuItems.filter((el) => {
             return event.target.innerText === el.displayValue;
         });
 
-        const selectedList = Array.prototype.concat(this.state.selectedItems, selectedItem);
+        const selectedList = [...selectedItems, selectedItem];
         this.manageSelectedItems(selectedList);
     }
     /**
-     * 
+     * @description remove a selected item from the list of selections
      * @param {String} value
      * @returns {Undefined} 
      */
     handleTagRemove (value) {
+        const { selectedItems } = this.state;
+
         if (value === '') {
             return;
         }
-        const selectedList = this.state.selectedItems.filter((item) => {
+
+        const selectedList = selectedItems.filter((item) => {
             return item.displayValue !== value;
         });
 
         this.manageSelectedItems(selectedList, false);
     }
     /**
-     * 
+     * @description Enter event triggered on the input must select the option
+     * as well as a cursor click event
      * @param {Object} event
      * @param {Array} options
      * @returns {Undefined}
      */
     handleInputEnter (event, options) { // TODO maybe a medium layer that manage key events?
-        if (!this.state.isOpen) {
+        const {
+            isOpen,
+            cursor,
+            selectedItems,
+        } =  this.state;
+
+        if (!isOpen) {
             this.setState({ isOpen: true });
         }
 
@@ -140,21 +155,21 @@ class ReactBoxesSelector extends Component {
             return;
         }
 
-        // user navigated by arrow keys
-        if (this.state.cursor !== 0) {
-            const selectedList = Array.prototype.concat(this.state.selectedItems, options[this.state.cursor - 1]);
+        // user navigated by arrow keys, select current option
+        if (cursor !== 0) {
+            const selectedList = Array.prototype.concat(selectedItems, options[cursor - 1]);
             this.manageSelectedItems(selectedList);
             return;
         }
 
-        // typeahead reduced list to just 1 item
+        // typeahead reduced list to just 1 item and user press enter, select this option
         if (options.length === 1) {
-            const selectedList = Array.prototype.concat(this.state.selectedItems, options);
+            const selectedList = Array.prototype.concat(selectedItems, options);
             this.manageSelectedItems(selectedList);
         }
     }
     /**
-     * 
+     * @description Actually updating selected list, and leaving search input ready for a next term
      * @param {Array} selectedList
      * @param {Boolean} shouldResetInput
      * @returns {Undefined}
@@ -171,6 +186,7 @@ class ReactBoxesSelector extends Component {
         }
     }
     /**
+     * @description Enabled control opens dropdown when get focus
      * @returns {Undefined}
      */
     handleInputFocus () {
@@ -188,6 +204,9 @@ class ReactBoxesSelector extends Component {
         this.closeDropDown();
     }
     /**
+     * @description Arrow key support. Up/down modify 'cursor' value, increasin or decreasing it.
+     * When we are at the top/bottom boundaries of the list, we can jump to the opposite item
+     * to create a continue navigation flow (eg: you get last one and press down, you jump to the very first item)
      * @param {Object} event
      * @param {Array} options
      * @returns {Undefined}
