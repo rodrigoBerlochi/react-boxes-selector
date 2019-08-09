@@ -1,0 +1,71 @@
+{
+  "name": "react-boxes-selector",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/react-boxes-selector.js",
+  "module": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/[...].git"
+  },
+  "typings": "./index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib dist es",
+    "lint": "eslint src test",
+    "test": "jest --watchAll --config",
+    "test-cov": "jest --coverage",
+    "test-ci": "jest --coverage",
+    "build": "webpack --config ./webpack.config.js",
+    "badges": "npm run test-cov && jest-coverage-badges input ./coverage/coverage-summary.json output .badges/"
+  },
+  "files": [
+    "lib",
+    "es",
+    "src",
+    "dist",
+    "index.d.ts"
+  ],
+  "keywords": [
+    "React",
+    "Context",
+    "Redux",
+    "Properties",
+    "Container"
+  ],
+  "author": "Rodrigo Berlochi, <rodrigo.berlochi@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/[...]/issues"
+  },
+  "homepage": "https://github.com/[...]#readme",
+  "peerDependencies": {
+    "react": "~16.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "@testing-library/react": "^8.0.8",
+    "babel-loader": "^8.0.5",
+    "cross-env": "^1.0.7",
+    "eslint": "~5.14.1",
+    "eslint-config-airbnb": "~17.1.0",
+    "eslint-plugin-import": "~2.16.0",
+    "eslint-plugin-jest": "~22.3.0",
+    "eslint-plugin-jsx-a11y": "~6.2.1",
+    "eslint-plugin-react": "~7.12.4",
+    "husky": "~1.3.1",
+    "jest": "~24.1.0",
+    "jest-cli": "~24.1.0",
+    "jest-coverage-badges": "^1.1.2",
+    "prettier": "^1.15.3",
+    "pretty-quick": "~1.10.0",
+    "prop-types": "~15.7.2",
+    "react": "~16.9.0",
+    "rimraf": "^2.5.2",
+    "typings-tester": "^0.3.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {}
+}

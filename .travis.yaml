@@ -1,0 +1,12 @@
+language: nodes_js
+node_js:
+  - "10"
+
+env:
+  matrix:
+    - REACT=16.8
+sudo: false
+before_script:
+  - npm install
+script:
+  - npm run test-ci
