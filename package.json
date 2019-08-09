@@ -6,7 +6,7 @@
   "module": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/[...].git"
+    "url": "git+https://github.com/rodrigoBerlochi/react-boxes-selector"
   },
   "typings": "./index.d.ts",
   "scripts": {
@@ -37,9 +37,9 @@
   "author": "Rodrigo Berlochi, <rodrigo.berlochi@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/[...]/issues"
+    "url": "https://github.com/rodrigoBerlochi/react-boxes-selector/issues"
   },
-  "homepage": "https://github.com/[...]#readme",
+  "homepage": "https://github.com/rodrigoBerlochi/react-boxes-selector#readme",
   "peerDependencies": {
     "react": "~16.9.0"
   },
