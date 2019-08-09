@@ -1,10 +1,9 @@
-import {TabStyles} from '@tabloids/widgets';
 import styled from 'styled-components';
 
 export const Tag = styled.li`{
-    background: ${TabStyles.Colors.F2_5};
+    background: ${''.Colors.F2_5};
     &:hover {
-        background: ${TabStyles.Colors.F5}
+        background: ${''.Colors.F5}
     }
 }`;
 
@@ -15,8 +14,8 @@ export const getStyles = () => {
             paddingLeft: 0,
             margin: 0,
             display: 'inline',
-            fontSize: TabStyles.Typography.Sizing.Default,
-            fontFamily: TabStyles.Typography.FontFamily
+            fontSize: ''.Typography.Sizing.Default,
+            fontFamily: ''.Typography.FontFamily
         },
         tag: {
             float: 'left',

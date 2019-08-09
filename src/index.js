@@ -7,10 +7,10 @@ import enhanceWithClickOutside from 'react-click-outside';
 import AutosizeInput from 'react-input-autosize';
 
 
-import { TagList } from './TagList/TagList';
+import { BoxList } from './BoxList/BoxList';
 import { FloatingOverlay } from './FloatingOverlay/FloatingOverlay';
 import { SelectableListItems } from './SelectableListItems/SelectableListItems';
-
+// InputX isnt meaningful, improve it
 import { getStyles, InputX } from './styles';
 
 const styles = getStyles();
@@ -230,7 +230,7 @@ class ReactBoxesSelector extends Component {
         }
     }
     /**
-     * @description Close overlay after navigating out of it by Tabs
+     * @description Close overlay after navigating out of it by Tab
      * @param {Object} event
      * @returns {Undefined} 
      */
@@ -240,7 +240,7 @@ class ReactBoxesSelector extends Component {
         }
     }
     /**
-     * @description part of simulated input, click on wrapper should
+     * @description As part of the simulated input, click on wrapper should
      * behave as click on real input
      * @returns {Undefined}
      */
@@ -269,15 +269,30 @@ class ReactBoxesSelector extends Component {
      * @returns {Object} React element
      */
     render () {
-        const { searchTerm, selectedItems, isOpen, cursor } = this.state;
-        const { menuItems, placeholder, noMoreOptionsMessage, maxLinesVisible, tagMaxWordLength, isDisabled } = this.props;
+        const { 
+            searchTerm, 
+            selectedItems, 
+            isOpen, 
+            cursor 
+        } = this.state;
 
+        const { 
+            menuItems, 
+            placeholder, 
+            noMoreOptionsMessage, 
+            maxLinesVisible, 
+            tagMaxWordLength, 
+            isDisabled 
+        } = this.props;
+
+        // move out to a method all next stuff, break into smaller single resp functions
         const regX = new RegExp(searchTerm, 'i');
 
-        const options = menuItems.filter((item) => {
+        const options = menuItems.filter((availableOption) => {
             // remove elements already selected
+            // available options mustn't include
             return findIndex(selectedItems, (o) => {
-                return o.value === item.value;
+                return o.value === availableOption.value;
             }) === -1;
         }).filter((item) => {
             // remove elements not matching search term
@@ -292,7 +307,7 @@ class ReactBoxesSelector extends Component {
                     onClick={() => { this.catchFocusIntent(); }}
                     innerRef={this.inputXRef}
                 >
-                    <TagList
+                    <BoxList
                         items={selectedItems}
                         handleTagClick={(event) => {
                             this.handleTagRemove(event);

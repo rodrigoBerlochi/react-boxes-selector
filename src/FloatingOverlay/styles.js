@@ -1,5 +1,3 @@
-import {TabStyles} from '@tabloids/widgets';
-
 export const getStyles = () => {
     const basicStyles = {
         isOpen: {
@@ -10,13 +8,13 @@ export const getStyles = () => {
         },
         container: {
             outline: '1px solid',
-            outlineColor: TabStyles.Colors.L6,
-            backgroundColor: TabStyles.Colors.White,
-            boxShadow: TabStyles.Shadow.High,
+            outlineColor: ''.Colors.L6,
+            backgroundColor: ''.Colors.White,
+            boxShadow: ''.Shadow.High,
             position: 'absolute',
             marginTop: 0,
             width: '100%',
-            maxHeight: (TabStyles.Typography.Sizing.Default * 16),
+            maxHeight: (''.Typography.Sizing.Default * 16),
             overflowY: 'auto',
             boxSizing: 'border-box',
             zIndex: 1000

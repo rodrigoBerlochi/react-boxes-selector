@@ -6,7 +6,7 @@ import { EllipseText } from '../EllipseText/EllipseText';
 
 const styles = getStyles();
 
-export const TagList = ({ items, handleTagClick, maxWordLength }) => {
+export const BoxList = ({ items, handleTagClick, maxWordLength }) => {
     return (
         <ul className="wdc-tag-list" style={styles.tags}>
             {items.map((item) => {
@@ -21,7 +21,7 @@ export const TagList = ({ items, handleTagClick, maxWordLength }) => {
     );
 };
 
-TagList.propTypes = {
+BoxList.propTypes = {
     items: arrayOf(shape({
         displayValue: string,
         value: string
@@ -30,6 +30,6 @@ TagList.propTypes = {
     maxWordLength: number
 };
 
-TagList.defaultProps = {
+BoxList.defaultProps = {
     maxWordLength: 12
 };
