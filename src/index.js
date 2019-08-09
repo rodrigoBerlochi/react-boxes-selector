@@ -49,22 +49,6 @@ class ReactBoxesSelector extends Component {
         isDisabled: false
     }
 
-    /**
-     * PROBABLY WE WONT NEED THIS
-     * @param {Object} nextProps
-     * @param {Object} prevState
-     * @returns {Null | Object} new state
-     */
-    static getDerivedStateFromProps = (nextProps, prevState) => {
-        if (nextProps.chosenItems !== prevState.selectedItems) {
-            return {
-                selectedItems: nextProps.chosenItems
-            };
-        }
-
-        return null;
-    }
-
     initialState = {
         searchTerm: '',
         isOpen: false,
