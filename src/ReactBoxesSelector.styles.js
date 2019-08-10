@@ -1,12 +1,13 @@
 import styled from 'styled-components';
+import { Semantics, Basics } from './theme.styles';
 
-export const InputX = styled.div`{
-    outline-color: ${''.Colors.L6};
+export const CompoundedInput = styled.div`{
+    outline-color: ${Semantics.Elements.BorderColor};
     &:not([disabled]):hover{
-        outline-color: ${''.Colors.L8};
+        outline-color: ${Semantics.Elements.EnabledBorderColor};
     }
     &[disabled]{
-        outline-color: ${''.Colors.L5};
+        outline-color: ${Semantics.Elements.DisabledBorderColor};
     }
 }`;
 
@@ -14,16 +15,16 @@ export const getStyles = () => {
     const basicStyles = {
         widget: {
             position: 'relative',
-            fontSize: ''.Typography.Sizing.Default,
-            fontFamily: ''.Typography.FontFamily,
-            color: ''.Typography.Color.Primary,
+            fontSize: Semantics.Fonts.Size.Main,
+            fontFamily: Basics.Typography.Family,
+            color: Semantics.Fonts.Colors.Main,
             width: '100%'
         },
-        inputX: {
-            outlineWidth: 1,
-            outlineStyle: 'solid',
+        compoundedInput: {
+            outlineWidth: Semantics.Elements.StrokeSize,
+            outlineStyle: Semantics.Elements.StrokeStyle,
             width: '100%',
-            borderRadius: 1,
+            borderRadius: Semantics.Elements.BorderRadius,
             paddingRight: 6,
             paddingTop: 2,
             paddingLeft: 2,
@@ -37,12 +38,12 @@ export const getStyles = () => {
             border: 'none',
             paddingLeft: 6,
             outline: 'none',
-            fontSize: ''.Typography.Sizing.Default,
-            fontFamily: ''.Typography.FontFamily,
+            fontSize: Semantics.Fonts.Size.Main,
+            fontFamily: Basics.Typography.Family,
             height: 24
         },
         bgWhite: {
-            background: 'white'
+            background: Basics.Colors.White,
         }
     };
 

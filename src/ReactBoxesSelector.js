@@ -1,17 +1,15 @@
+import React, { Component, createRef } from 'react';
 import findIndex from 'lodash.findindex';
 import { func, arrayOf, shape, string, number, bool } from 'prop-types';
-import React, { Component, createRef } from 'react';
 // https://github.com/kentor/react-click-outside
 import enhanceWithClickOutside from 'react-click-outside';
 // https://github.com/JedWatson/react-input-autosize/
 import AutosizeInput from 'react-input-autosize';
 
-
 import { BoxList } from './BoxList/BoxList';
 import { FloatingOverlay } from './FloatingOverlay/FloatingOverlay';
 import { SelectableListItems } from './SelectableListItems/SelectableListItems';
-// InputX isnt meaningful, improve it
-import { getStyles, InputX } from './styles';
+import { getStyles, CompoundedInput } from './ReactBoxesSelector.styles';
 
 const styles = getStyles();
 
@@ -285,9 +283,9 @@ class ReactBoxesSelector extends Component {
 
         return (
             <div data-name="ReactBoxesSelector" style={styles.widget}>
-                <InputX className="wdc-composed-input"
+                <CompoundedInput className="wdc-composed-input"
                     disabled={isDisabled}
-                    style={{ ...styles.inputX, ...{maxHeight: (28 * maxLinesVisible)} }}
+                    style={{ ...styles.compoundedInput, ...{maxHeight: (28 * maxLinesVisible)} }}
                     onClick={() => { this.catchFocusIntent(); }}
                     innerRef={this.inputXRef}
                 >
@@ -319,7 +317,7 @@ class ReactBoxesSelector extends Component {
                         }}
                         placeholder={placeholder}
                     />
-                </InputX>
+                </CompoundedInput>
                 <FloatingOverlay
                     shouldOpen={isOpen}
                     overlayRef={this.overlayRef}

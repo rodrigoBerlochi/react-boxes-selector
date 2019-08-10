@@ -1,25 +1,36 @@
 import React from 'react';
 import { func, arrayOf, shape, string, number } from 'prop-types';
-import { getStyles, Tag } from './styles';
+import { getStyles, Box } from './BoxList.styles';
 import { CloseIcon } from '../CloseIcon/CloseIcon';
 import { EllipseText } from '../EllipseText/EllipseText';
 
 const styles = getStyles();
 
-export const BoxList = ({ items, handleTagClick, maxWordLength }) => {
-    return (
-        <ul className="wdc-tag-list" style={styles.tags}>
+export const BoxList = ({ 
+    items, 
+    handleTagClick, 
+    maxWordLength 
+}) => (
+        <ul data-name="BoxList" style={styles.List}>
             {items.map((item) => {
                 return (
-                    <Tag style={styles.tag} key={item.value}>
-                        <EllipseText length={maxWordLength}>{item.displayValue}</EllipseText>
-                        <CloseIcon id={item.displayValue} handleClick={handleTagClick}
+                    <Box 
+                        style={styles.Box} 
+                        key={item.value}
+                    >
+                        <EllipseText 
+                            length={maxWordLength}>
+                                {item.displayValue}
+                        </EllipseText>
+                        <CloseIcon 
+                            id={item.displayValue} 
+                            handleClick={handleTagClick}
                         />
-                    </Tag>);
+                    </Box>
+                );
             })}
         </ul>
-    );
-};
+);
 
 BoxList.propTypes = {
     items: arrayOf(shape({
@@ -27,9 +38,9 @@ BoxList.propTypes = {
         value: string
     })).isRequired,
     handleTagClick: func.isRequired,
-    maxWordLength: number
+    maxWordLength: number,
 };
 
 BoxList.defaultProps = {
-    maxWordLength: 12
+    maxWordLength: 12,
 };
