@@ -16,6 +16,7 @@ export const Basics = {
         Family: 'Helvetica,Arial,sans-serif',
     },
     Spacing: {},
+    Shadow: '5px 5px 12px -2px rgba(0,0,0,0.39)',
 };
 
 export const Semantics = {

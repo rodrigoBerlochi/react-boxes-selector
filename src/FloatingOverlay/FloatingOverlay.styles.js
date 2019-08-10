@@ -1,3 +1,10 @@
+import { Semantics, Basics } from '../theme.styles';
+
+const {
+    Elements,
+    Fonts,
+} =  Semantics;
+
 export const getStyles = () => {
     const basicStyles = {
         isOpen: {
@@ -7,17 +14,17 @@ export const getStyles = () => {
             display: 'none'
         },
         container: {
-            outline: '1px solid',
-            outlineColor: ''.Colors.L6,
-            backgroundColor: ''.Colors.White,
-            boxShadow: ''.Shadow.High,
+            outline: `${Elements.StrokeSize} ${Elements.StrokeStyle} ${Elements.BorderColor}`,
+            backgroundColor: Basics.Colors.White,
             position: 'absolute',
             marginTop: 0,
             width: '100%',
-            maxHeight: (''.Typography.Sizing.Default * 16),
+            maxHeight: (Fonts.Size.Main * 16),
             overflowY: 'auto',
             boxSizing: 'border-box',
-            zIndex: 1000
+            zIndex: 1000,
+            WebkitBoxShadow: Basics.Shadow, 
+            boxShadow: Basics.Shadow,
         }
     };
 

@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { Semantics, Basics } from '../theme.styles';
 
 export const WithHover = styled.div`
     padding: 3px;
     cursor: pointer;
     &:hover {
-        background: ${''.Colors.F2_5};
+        background: ${Semantics.Elements.SolidBackgroundHover};
     }
 `;
 
@@ -13,17 +14,17 @@ export const getStyles = () => {
         container: {
             padding: 6,
             listStyle: 'none',
-            fontSize: ''.Typography.Sizing.Default,
-            fontFamily: ''.Typography.FontFamily,
+            fontSize: Semantics.Fonts.Size.Main,
+            fontFamily: Basics.Typography.Family,
             width: '100%',
             margin: 0,
-            boxSizing: 'border-box'
+            boxSizing: 'border-box',
         },
         optHover: {
-            backgroundColor: ''.Colors.F2_5
+            backgroundColor: Semantics.Elements.SolidBackgroundHover,
         },
         msgOption: {
-            cursor: 'default'
+            cursor: 'default',
         }
     };
 

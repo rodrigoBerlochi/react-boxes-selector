@@ -1,15 +1,21 @@
 import React from 'react';
 import { bool, element, object, oneOfType, string } from 'prop-types';
-import { getStyles } from './styles';
+import { getStyles } from './FloatingOverlay.styles';
 
 const styles = getStyles();
 
-// todo can it be a render prop?
-export const FloatingOverlay = ({shouldOpen, children, overlayRef}) => {
+export const FloatingOverlay = ({
+    shouldOpen, 
+    children, 
+    overlayRef,
+}) => {
     const status = shouldOpen ? styles.isOpen : styles.isClosed;
     return (
-        <div ref={overlayRef} className="wdc-floating-overlay" style={Object.assign({}, status, styles.container)}>
-            {children}
+        <div 
+            ref={overlayRef} 
+            data-name="floatingOverlay"
+            style={Object.assign({}, status, styles.container)}>
+                {children}
         </div>
     );
 };

@@ -1,11 +1,15 @@
 import React from 'react';
 import { func, number, arrayOf, shape, string } from 'prop-types';
-import { getStyles, WithHover } from './styles';
+import { getStyles, WithHover } from './SelectableListItems.styles';
 
-// TODO fix this
 const styles = getStyles();
 
-export const SelectableListItems = ({ items, cursor, handleItemClick, noMoreOptionsMessage }) => {
+export const SelectableListItems = ({ 
+    items, 
+    cursor, 
+    handleItemClick, 
+    noMoreOptionsMessage 
+}) => {
     if (items.length === 0) {
         return (<ul style={styles.container}><li styles={styles.msgOption}>{noMoreOptionsMessage}</li></ul>);
     }
@@ -28,7 +32,6 @@ export const SelectableListItems = ({ items, cursor, handleItemClick, noMoreOpti
     );
 };
 
-// TODO extract arrayOf object ot ext module
 SelectableListItems.propTypes = {
     handleItemClick: func.isRequired,
     cursor: number.isRequired,

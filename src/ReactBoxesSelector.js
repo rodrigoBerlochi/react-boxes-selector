@@ -66,10 +66,10 @@ class ReactBoxesSelector extends Component {
 
     overlayRef = createRef();
 
-    inputXRef = createRef();
+    compoundedInput = createRef();
 
     componentDidUpdate () {
-        const input = this.inputXRef.current;
+        const input = this.compoundedInput.current;
         input.scrollTop = input.scrollHeight || 1000;
     }
     /**
@@ -287,7 +287,7 @@ class ReactBoxesSelector extends Component {
                     disabled={isDisabled}
                     style={{ ...styles.compoundedInput, ...{maxHeight: (28 * maxLinesVisible)} }}
                     onClick={() => { this.catchFocusIntent(); }}
-                    innerRef={this.inputXRef}
+                    ref={this.compoundedInput}
                 >
                     <BoxList
                         items={selectedItems}
