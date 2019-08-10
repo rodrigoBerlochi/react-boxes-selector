@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { Semantics, Basics } from '../theme.styles';
-
+console.log('....', Semantics.Elements);
 export const Box = styled.li`{
-    background: ${Semantics.Elements.SolidBackground};
+    background-color: ${Semantics.Elements.SolidBackground};
     &:hover {
-        background: ${Semantics.Elements.SolidBackgroundHover}
+        background-color: ${Semantics.Elements.SolidBackgroundHover}
     }
 }`;
 
@@ -27,7 +27,8 @@ export const getStyles = () => {
             borderRadius: Semantics.Elements.BorderRadius,
             height: 18,
             cursor: 'pointer',
-            paddingRight: 2
+            paddingRight: 2,
+            color: Basics.Colors.White,
         }
     };
 

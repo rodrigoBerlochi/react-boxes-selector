@@ -4,6 +4,29 @@ import { Button } from '@storybook/react/demo';
 
 import BoxesSelector from './ReactBoxesSelector';
 
+storiesOf('React Box Selector', module)
+  .add('basic usage', () => (
+    <div style={{ padding: 50 }}>
+          <BoxesSelector 
+            onReset={() => {}}
+            menuItems={ProgrammingLanguages}
+            chosenItems={[
+              {
+                displayValue: 'Python',
+                value: '003'
+              }
+            ]}
+            placeholder={'Choose your languages'}
+            noMoreOptionsMessage={'You\'ve chosen everything we have for you!'}
+            maxLinesVisibe={2}
+            tagMaxWordLength={8}
+            isDisabled={false}
+          />
+    </div>
+  ));
+
+
+
 const ProgrammingLanguages = [
   {
     displayValue: 'Perl',
@@ -49,13 +72,20 @@ const ProgrammingLanguages = [
     displayValue: 'Objective-C',
     value: '011'
   },
+  {
+    displayValue: 'PHP',
+    value: '012'
+  },
+  {
+    displayValue: 'C++',
+    value: '013'
+  },
+  {
+    displayValue: 'Swift',
+    value: '014'
+  },
+  {
+    displayValue: 'Typescript',
+    value: '015'
+  },
 ];
-
-storiesOf('React Box Selector', module)
-  .add('basic usage', () => (
-    <div style={{ padding: 50 }}>
-          <BoxesSelector 
-            menuItems={ProgrammingLanguages}
-          />
-    </div>
-  ));

@@ -5,7 +5,8 @@ export const WithHover = styled.div`
     padding: 3px;
     cursor: pointer;
     &:hover {
-        background: ${Semantics.Elements.SolidBackgroundHover};
+        background-color: ${Semantics.Elements.SolidBackgroundHover};
+        color: ${Basics.Colors.White};
     }
 `;
 
@@ -22,6 +23,7 @@ export const getStyles = () => {
         },
         optHover: {
             backgroundColor: Semantics.Elements.SolidBackgroundHover,
+            color: Basics.Colors.White,
         },
         msgOption: {
             cursor: 'default',

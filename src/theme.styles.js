@@ -21,14 +21,14 @@ export const Basics = {
 
 export const Semantics = {
     Elements: {
-        EnabledBorderColor: Basics.Darkest,
-        DisabledBorderColor: Basics.Grayed,
-        BorderColor: Basics.Dark,
+        EnabledBorderColor: Basics.Colors.Darkest,
+        DisabledBorderColor: Basics.Colors.Grayed,
+        BorderColor: Basics.Colors.Dark,
         StrokeSize: 1,
         StrokeStyle: 'solid',
         BorderRadius: 1,
-        SolidBackground: Basics.DarkMedium,
-        SolidBackgroundHover: Basics.Darkest,
+        SolidBackground: Basics.Colors.DarkMedium,
+        SolidBackgroundHover: Basics.Colors.Darkest,
         Transparent: 0.5,
     },
     Fonts: {

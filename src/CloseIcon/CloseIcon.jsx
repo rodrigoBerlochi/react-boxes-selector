@@ -26,7 +26,8 @@ export const CloseIcon = ({
             width: size,
             height: size,
             float: 'right',
-            textAlign: 'center'
+            textAlign: 'center',
+            marginLeft: 3,
         }
     };
     

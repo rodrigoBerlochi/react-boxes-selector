@@ -1,6 +1,6 @@
 {
   "name": "react-boxes-selector",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/react-boxes-selector.js",
   "module": "src/index.js",

@@ -44,7 +44,8 @@ class ReactBoxesSelector extends Component {
         onReset: () => {},
         onSelect: (val) => { console.log(val); },
         maxLinesVisible: 2,
-        isDisabled: false
+        isDisabled: false,
+        tagMaxWordLength: 12,
     }
 
     initialState = {
@@ -72,6 +73,16 @@ class ReactBoxesSelector extends Component {
         const input = this.compoundedInput.current;
         input.scrollTop = input.scrollHeight || 1000;
     }
+
+    componentDidMount () {
+        const { chosenItems } = this.props;
+        
+        if (!!chosenItems.length) {
+            this.setState({
+                selectedItems: [...chosenItems]
+            });
+        }
+    }
     /**
      * TODO PUT DEBOUNCER?
      * @description On writting updates internal state
@@ -94,7 +105,7 @@ class ReactBoxesSelector extends Component {
             return event.target.innerText === el.displayValue;
         });
 
-        const selectedList = [...selectedItems, selectedItem];
+        const selectedList = [...selectedItems, ...selectedItem];
         this.manageSelectedItems(selectedList);
     }
     /**
@@ -283,7 +294,7 @@ class ReactBoxesSelector extends Component {
 
         return (
             <div data-name="ReactBoxesSelector" style={styles.widget}>
-                <CompoundedInput className="wdc-composed-input"
+                <CompoundedInput
                     disabled={isDisabled}
                     style={{ ...styles.compoundedInput, ...{maxHeight: (28 * maxLinesVisible)} }}
                     onClick={() => { this.catchFocusIntent(); }}
