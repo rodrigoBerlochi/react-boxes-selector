@@ -259,6 +259,24 @@ class ReactBoxesSelector extends Component {
         this.setState({ searchTerm: '' });
     }
     /**
+     * @returns {Array<object>}
+     */
+    getOptions(searchTerm, menuItems, selectedItems) {
+        // move out to a method all next stuff, break into smaller single resp functions
+        const regX = new RegExp(searchTerm, 'i');
+
+        return menuItems.filter((availableOption) => {
+            // remove elements already selected
+            // available options mustn't include
+            return findIndex(selectedItems, (o) => {
+                return o.value === availableOption.value;
+            }) === -1;
+        }).filter((item) => {
+            // remove elements not matching search term
+            return searchTerm.length === 0 ? true : regX.test(item.displayValue);
+        });
+    }
+    /**
      * @returns {Object} React element
      */
     render () {
@@ -278,19 +296,7 @@ class ReactBoxesSelector extends Component {
             isDisabled 
         } = this.props;
 
-        // move out to a method all next stuff, break into smaller single resp functions
-        const regX = new RegExp(searchTerm, 'i');
-
-        const options = menuItems.filter((availableOption) => {
-            // remove elements already selected
-            // available options mustn't include
-            return findIndex(selectedItems, (o) => {
-                return o.value === availableOption.value;
-            }) === -1;
-        }).filter((item) => {
-            // remove elements not matching search term
-            return searchTerm.length === 0 ? true : regX.test(item.displayValue);
-        });
+        const options = this.getOptions(searchTerm, menuItems, selectedItems);
 
         return (
             <div data-name="ReactBoxesSelector" style={styles.widget}>
