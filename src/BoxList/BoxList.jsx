@@ -6,7 +6,7 @@ import { EllipseText } from '../EllipseText/EllipseText';
 
 const styles = getStyles();
 
-export const BoxList = ({ 
+const BoxList = ({ 
     items, 
     handleTagClick, 
     maxWordLength 
@@ -44,3 +44,5 @@ BoxList.propTypes = {
 BoxList.defaultProps = {
     maxWordLength: 12,
 };
+
+export default React.memo(BoxList);

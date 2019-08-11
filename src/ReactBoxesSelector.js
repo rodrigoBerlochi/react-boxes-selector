@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react';
+import React, { PureComponent, createRef } from 'react';
 import findIndex from 'lodash.findindex';
 import { func, arrayOf, shape, string, number, bool } from 'prop-types';
 // https://github.com/kentor/react-click-outside
@@ -7,7 +7,7 @@ import enhanceWithClickOutside from 'react-click-outside';
 import AutosizeInput from 'react-input-autosize';
 import { debounce } from './utils';
 
-import { BoxList } from './BoxList/BoxList';
+import BoxList from './BoxList/BoxList';
 import { FloatingOverlay } from './FloatingOverlay/FloatingOverlay';
 import { SelectableListItems } from './SelectableListItems/SelectableListItems';
 import { getStyles, CompoundedInput } from './ReactBoxesSelector.styles';
@@ -18,7 +18,7 @@ const styles = getStyles();
  * ReactBoxesSelector
  * @returns {Object} React element
  */
-class ReactBoxesSelector extends Component {
+class ReactBoxesSelector extends PureComponent {
     // to change: manage selected internally. it should be internal state. keep a prop-func to apply some kind of processing
     // but we dont want to depend on Redux and actions to know which are the menuitems afeter select some of option
     static propTypes = {
