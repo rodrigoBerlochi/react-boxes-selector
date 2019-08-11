@@ -11,7 +11,7 @@ const BoxList = ({
     handleTagClick, 
     maxWordLength 
 }) => (
-        <ul data-name="BoxList" style={styles.List}>
+        <ul data-name="BoxList" style={styles.List} data-testid="selected-items">
             {items.map((item) => {
                 return (
                     <Box 

@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`React Boxes Selector Should match snapshot 1`] = `
+<div
+  data-name="ReactBoxesSelector"
+  style="position: relative; font-size: 12px; font-family: Helvetica,Arial,sans-serif; color: rgb(151, 189, 189); width: 100%;"
+>
+  <div
+    class="sc-htpNat cnAWPo"
+    style="outline-width: 1px; outline-style: solid; width: 100%; border-radius: 1px; padding-right: 6px; padding-top: 2px; padding-left: 2px; min-height: 24px; max-height: 56px; box-sizing: border-box; overflow: hidden; overflow-y: auto;"
+  >
+    <ul
+      data-name="BoxList"
+      data-testid="selected-items"
+      style="list-style: none; padding-left: 0px; margin: 0px; display: inline; font-size: 12px; font-family: Helvetica,Arial,sans-serif;"
+    >
+      <li
+        class="sc-bdVaJa djZsDJ"
+        style="float: left; padding-top: 6px; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; border-radius: 1px; height: 18px; cursor: pointer; padding-right: 2px; color: rgb(255, 255, 255);"
+      >
+        <span>
+          Python
+        </span>
+        <span
+          id="Python"
+          style="display: inline-block; width: 18px; height: 18px; float: right; text-align: center; margin-left: 3px;"
+        >
+          <img
+            class="sc-bwzfXH jCtoab"
+            src="data:image/svg+xml;base64,  PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJEaWFsb2d1ZUNsb3NlWCIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIxNHB4IiBoZWlnaHQ9IjE0cHgiIHZpZXdCb3g9IjAgMCAxNCAxNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTQgMTQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggaWQ9IlgiIHN0eWxlPSJmaWxsOiM2NjY2NjY7IiBkPSJNNy43LDdsNC43LTQuN2MwLjItMC4yLDAuMi0wLjUsMC0wLjdzLTAuNS0wLjItMC43LDBMNyw2LjNMMi4zLDEuNmMtMC4yLTAuMi0wLjUtMC4yLTAuNywwICBzLTAuMiwwLjUsMCwwLjdMNi4zLDdsLTQuNyw0LjdjLTAuMiwwLjItMC4yLDAuNSwwLDAuN3MwLjUsMC4yLDAuNywwTDcsNy43bDQuNyw0LjdjMC4yLDAuMiwwLjUsMC4yLDAuNywwczAuMi0wLjUsMC0wLjdMNy43LDd6Ii8+Cjwvc3ZnPg=="
+            style="width: 12px; height: 12px;"
+          />
+        </span>
+      </li>
+    </ul>
+    <div
+      style="float: left; display: inline-block;"
+    >
+      <input
+        placeholder="Choose your languages"
+        style="box-sizing: content-box; width: 2px; padding-left: 6px; outline: none; font-size: 12px; font-family: Helvetica,Arial,sans-serif; height: 24px;"
+        value=""
+      />
+      <div
+        style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 12px; font-family: Helvetica,Arial,sans-serif; letter-spacing: normal; text-transform: none;"
+      />
+      <div
+        style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 12px; font-family: Helvetica,Arial,sans-serif; letter-spacing: normal; text-transform: none;"
+      >
+        Choose your languages
+      </div>
+    </div>
+  </div>
+  <div
+    data-name="floatingOverlay"
+    style="display: none; outline: 1 solid #9fcabb; background-color: rgb(255, 255, 255); position: absolute; margin-top: 0px; width: 100%; box-sizing: border-box; z-index: 1000; box-shadow: 5px 5px 12px -2px rgba(0,0,0,0.39);"
+  >
+    <ul
+      data-testid="item-list"
+      style="padding: 6px; list-style: none; font-size: 12px; font-family: Helvetica,Arial,sans-serif; width: 100%; margin: 0px; box-sizing: border-box;"
+    >
+      <div
+        style="position: relative; overflow: hidden; width: 100%; height: auto; min-height: 0; max-height: 200px;"
+      >
+        <div
+          style="position: relative; overflow: scroll; margin-right: 0px; margin-bottom: 0px; min-height: 0; max-height: 200px;"
+        >
+          <li
+            data-position="0"
+          >
+            <div
+              style="padding: 4px;"
+            >
+              Perl
+            </div>
+          </li>
+          <li
+            data-position="1"
+          >
+            <div
+              style="padding: 4px;"
+            >
+              Ruby
+            </div>
+          </li>
+        </div>
+        <div
+          style="position: absolute; height: 6px; transition: opacity 200ms; opacity: 0; display: none; right: 2px; bottom: 2px; left: 2px; border-radius: 3px;"
+        >
+          <div
+            style="position: relative; display: block; height: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2);"
+          />
+        </div>
+        <div
+          style="position: absolute; width: 6px; transition: opacity 200ms; opacity: 0; display: none; right: 2px; bottom: 2px; top: 2px; border-radius: 3px;"
+        >
+          <div
+            style="position: relative; display: block; width: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2);"
+          />
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>
+`;

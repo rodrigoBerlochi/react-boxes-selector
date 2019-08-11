@@ -25,7 +25,7 @@ export const SelectableListItems = ({
     }, [switchToMouseNavigation]);
 
     return (
-            <ul style={styles.container}>
+            <ul style={styles.container} data-testid="item-list">
                 <Scrollbars
                     style={{ width: '100%'}} 
                     autoHeight 
