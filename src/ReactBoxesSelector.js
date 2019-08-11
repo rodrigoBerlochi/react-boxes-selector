@@ -5,6 +5,7 @@ import { func, arrayOf, shape, string, number, bool } from 'prop-types';
 import enhanceWithClickOutside from 'react-click-outside';
 // https://github.com/JedWatson/react-input-autosize/
 import AutosizeInput from 'react-input-autosize';
+import { debounce } from './utils';
 
 import { BoxList } from './BoxList/BoxList';
 import { FloatingOverlay } from './FloatingOverlay/FloatingOverlay';
@@ -84,14 +85,14 @@ class ReactBoxesSelector extends Component {
         }
     }
     /**
-     * TODO PUT DEBOUNCER?
+     * 
      * @description On writting updates internal state
      * @param {Object} event
      * @returns {Undefined}
      */
     handleInputChange = (event) => {
         this.setState({ searchTerm: event.target.value });
-    }
+    };
     /**
      * @description Add clicked item to the list of selected items
      * @param {Object} event
@@ -223,6 +224,14 @@ class ReactBoxesSelector extends Component {
         }
     }
     /**
+     * @description When jumping from arrow navigation to mouse nav, 
+     * it remove highlighted items by arrows, handling over cursor events
+     * @returns {Undefined}
+     */
+    switchToMouseNavigation = (position) => {
+        this.setState({ cursor: position });
+    };
+    /**
      * @description Close overlay after navigating out of it by Tab
      * @param {Object} event
      * @returns {Undefined} 
@@ -338,6 +347,7 @@ class ReactBoxesSelector extends Component {
                         cursor={cursor}
                         handleItemClick={this.handleOptionClick}
                         noMoreOptionsMessage={noMoreOptionsMessage}
+                        switchToMouseNavigation={this.switchToMouseNavigation}
                     />
                 </FloatingOverlay>
             </div>

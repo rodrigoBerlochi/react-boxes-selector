@@ -1,15 +1,6 @@
 import styled from 'styled-components';
 import { Semantics, Basics } from '../theme.styles';
 
-export const WithHover = styled.div`
-    padding: 3px;
-    cursor: pointer;
-    &:hover {
-        background-color: ${Semantics.Elements.SolidBackgroundHover};
-        color: ${Basics.Colors.White};
-    }
-`;
-
 export const getStyles = () => {
     const basicStyles = {
         container: {
@@ -27,6 +18,9 @@ export const getStyles = () => {
         },
         msgOption: {
             cursor: 'default',
+        },
+        item: {
+            padding: 4,
         }
     };
 

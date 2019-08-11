@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Semantics, Basics } from '../theme.styles';
-console.log('....', Semantics.Elements);
+
 export const Box = styled.li`{
     background-color: ${Semantics.Elements.SolidBackground};
     &:hover {
