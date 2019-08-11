@@ -3,6 +3,7 @@ import { Semantics, Basics } from './theme.styles';
 
 export const CompoundedInput = styled.div`{
     outline-color: ${Semantics.Elements.BorderColor};
+    background-color: ${Basics.Colors.White};
     &:not([disabled]):hover{
         outline-color: ${Semantics.Elements.EnabledBorderColor};
     }

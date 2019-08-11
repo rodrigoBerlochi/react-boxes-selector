@@ -48,6 +48,12 @@ class ReactBoxesSelector extends Component {
         tagMaxWordLength: 12,
     }
 
+    inputRef = createRef();
+
+    overlayRef = createRef();
+
+    compoundedInput = createRef();
+
     initialState = {
         searchTerm: '',
         isOpen: false,
@@ -62,12 +68,6 @@ class ReactBoxesSelector extends Component {
             this.props.onReset(this.state); // option to communicate outside a reset flow
         });
     }
-
-    inputRef = createRef();
-
-    overlayRef = createRef();
-
-    compoundedInput = createRef();
 
     componentDidUpdate () {
         const input = this.compoundedInput.current;
