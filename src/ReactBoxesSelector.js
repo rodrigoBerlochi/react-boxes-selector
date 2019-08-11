@@ -89,7 +89,7 @@ class ReactBoxesSelector extends Component {
      * @param {Object} event
      * @returns {Undefined}
      */
-    handleInputChange (event) {
+    handleInputChange = (event) => {
         this.setState({ searchTerm: event.target.value });
     }
     /**
@@ -97,7 +97,7 @@ class ReactBoxesSelector extends Component {
      * @param {Object} event
      * @returns {Undefined}
      */
-    handleOptionClick (event) {
+    handleOptionClick = (event) => {
         const { menuItems } = this.props;
         const { selectedItems } = this.state;
 
@@ -113,7 +113,7 @@ class ReactBoxesSelector extends Component {
      * @param {String} value
      * @returns {Undefined} 
      */
-    handleTagRemove (value) {
+    handleTagRemove = (value) => {
         const { selectedItems } = this.state;
 
         if (value === '') {
@@ -133,7 +133,7 @@ class ReactBoxesSelector extends Component {
      * @param {Array} options
      * @returns {Undefined}
      */
-    handleInputEnter (event, options) { // TODO maybe a medium layer that manage key events?
+    handleInputEnter = (event, options) => { // TODO maybe a medium layer that manage key events?
         const {
             isOpen,
             cursor,
@@ -182,7 +182,7 @@ class ReactBoxesSelector extends Component {
      * @description Enabled control opens dropdown when get focus
      * @returns {Undefined}
      */
-    handleInputFocus () {
+    handleInputFocus  = () => {
         if (this.props.isDisabled) {
             return;
         }
@@ -193,7 +193,7 @@ class ReactBoxesSelector extends Component {
      * don't change its name
      * @returns {Undefined}
      */
-    handleClickOutside () {
+    handleClickOutside = () => {
         this.closeDropDown();
     }
     /**
@@ -204,7 +204,7 @@ class ReactBoxesSelector extends Component {
      * @param {Array} options
      * @returns {Undefined}
      */
-    handleArrowNavigation (event, options) {
+    handleArrowNavigation = (event, options) => {
         const overlay = this.overlayRef.current;
         switch (event.key) {
             case 'ArrowDown':
@@ -227,7 +227,7 @@ class ReactBoxesSelector extends Component {
      * @param {Object} event
      * @returns {Undefined} 
      */
-    handleTab (event) {
+    handleTab = (event) => {
         if (event.key === 'Tab') {
             this.setState({ isOpen: false });
         }
@@ -237,13 +237,13 @@ class ReactBoxesSelector extends Component {
      * behave as click on real input
      * @returns {Undefined}
      */
-    catchFocusIntent () {
+    catchFocusIntent = () => {
         this.setFocusToInput();
     }
     /**
      * @returns {Undefined}
      */
-    closeDropDown () {
+    closeDropDown = () => {
         this.setState({ isOpen: false, cursor: 0 });
     }
     /**
@@ -255,7 +255,7 @@ class ReactBoxesSelector extends Component {
     /**
      * @returns {Undefined}
      */
-    cleanInput () {
+    cleanInput = () => {
         this.setState({ searchTerm: '' });
     }
     /**
@@ -303,14 +303,12 @@ class ReactBoxesSelector extends Component {
                 <CompoundedInput
                     disabled={isDisabled}
                     style={{ ...styles.compoundedInput, ...{maxHeight: (28 * maxLinesVisible)} }}
-                    onClick={() => { this.catchFocusIntent(); }}
+                    onClick={this.catchFocusIntent}
                     ref={this.compoundedInput}
                 >
                     <BoxList
                         items={selectedItems}
-                        handleTagClick={(event) => {
-                            this.handleTagRemove(event);
-                        }}
+                        handleTagClick={this.handleTagRemove}
                         maxWordLength={tagMaxWordLength}
                     />
                     <AutosizeInput
@@ -318,9 +316,7 @@ class ReactBoxesSelector extends Component {
                         disabled={isDisabled}
                         style={{float: 'left'}}
                         value={searchTerm}
-                        onChange={(event) => {
-                            this.handleInputChange(event);
-                        }}
+                        onChange={this.handleInputChange}
                         ref={this.inputRef}
                         onKeyPress={(event) => {
                             this.handleInputEnter(event, options);
@@ -329,9 +325,7 @@ class ReactBoxesSelector extends Component {
                             this.handleArrowNavigation(event, options);
                             this.handleTab(event);
                         }}
-                        onFocus={() => {
-                            this.handleInputFocus();
-                        }}
+                        onFocus={this.handleInputFocus}
                         placeholder={placeholder}
                     />
                 </CompoundedInput>
@@ -342,9 +336,7 @@ class ReactBoxesSelector extends Component {
                     <SelectableListItems
                         items={options}
                         cursor={cursor}
-                        handleItemClick={(event) => {
-                            this.handleOptionClick(event);
-                        }}
+                        handleItemClick={this.handleOptionClick}
                         noMoreOptionsMessage={noMoreOptionsMessage}
                     />
                 </FloatingOverlay>
