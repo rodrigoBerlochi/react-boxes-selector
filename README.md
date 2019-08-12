@@ -32,4 +32,19 @@ Supported properties:
 import BoxesSelector from 'ReactBoxesSelector';
 ```
 
-Test it running: npm run storybook
+## Testing
+
+Test it running: 
+```
+    npm run storybook
+```
+
+There are also unit tests (wip) available on:
+```
+    npm run test
+```
+
+And E2E tests (wip) to complement UTs. To check them, first start storybook and then:
+```
+    npm run webdriver-io
+```

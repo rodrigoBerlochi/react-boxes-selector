@@ -336,6 +336,7 @@ class ReactBoxesSelector extends PureComponent {
                         }}
                         onFocus={this.handleInputFocus}
                         placeholder={placeholder}
+                        data-testid="hidden-input"
                     />
                 </CompoundedInput>
                 <FloatingOverlay
