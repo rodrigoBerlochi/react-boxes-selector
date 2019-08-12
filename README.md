@@ -10,7 +10,7 @@ The component is a work in progress and it is also a playground where I can expe
 
 Supported properties:
 
-'''javascript
+```javascript
         onReset: func
         onSelect: func // pass a callback to read current selected items on each select/unselect event
         menuItems: arrayOf(shape({
@@ -26,8 +26,10 @@ Supported properties:
         maxLinesVisible: number
         tagMaxWordLength: number
         isDisabled: bool
-'''
+```
 
-'''
-    import BoxesSelector from 'ReactBoxesSelector';
-'''
+```
+import BoxesSelector from 'ReactBoxesSelector';
+```
+
+Test it running: npm run storybook
