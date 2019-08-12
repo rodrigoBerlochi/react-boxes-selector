@@ -7,9 +7,9 @@ import enhanceWithClickOutside from 'react-click-outside';
 import AutosizeInput from 'react-input-autosize';
 import { debounce } from './utils';
 
-import BoxList from './BoxList/BoxList';
-import { FloatingOverlay } from './FloatingOverlay/FloatingOverlay';
-import { SelectableListItems } from './SelectableListItems/SelectableListItems';
+import BoxList from './BoxList/BoxList.jsx';
+import { FloatingOverlay } from './FloatingOverlay/FloatingOverlay.jsx';
+import { SelectableListItems } from './SelectableListItems/SelectableListItems.jsx';
 import { getStyles, CompoundedInput } from './ReactBoxesSelector.styles';
 
 const styles = getStyles();

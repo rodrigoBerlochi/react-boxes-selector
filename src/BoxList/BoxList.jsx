@@ -1,8 +1,8 @@
 import React from 'react';
 import { func, arrayOf, shape, string, number } from 'prop-types';
 import { getStyles, Box } from './BoxList.styles';
-import { CloseIcon } from '../CloseIcon/CloseIcon';
-import { EllipseText } from '../EllipseText/EllipseText';
+import { CloseIcon } from '../CloseIcon/CloseIcon.jsx';
+import { EllipseText } from '../EllipseText/EllipseText.jsx';
 
 const styles = getStyles();
 

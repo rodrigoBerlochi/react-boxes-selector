@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/react-boxes-selector.js",
-  "module": "src/index.js",
+  "module": "src/ReactBoxesSelector.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rodrigoBerlochi/react-boxes-selector"
