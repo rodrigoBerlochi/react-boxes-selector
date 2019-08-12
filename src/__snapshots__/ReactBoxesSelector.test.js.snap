@@ -16,6 +16,7 @@ exports[`React Boxes Selector Should match snapshot 1`] = `
     >
       <li
         class="sc-bdVaJa djZsDJ"
+        data-testid="selected-item"
         style="float: left; padding-top: 6px; margin-right: 2px; margin-bottom: 2px; padding-left: 6px; border-radius: 1px; height: 18px; cursor: pointer; padding-right: 2px; color: rgb(255, 255, 255);"
       >
         <span>
@@ -53,6 +54,7 @@ exports[`React Boxes Selector Should match snapshot 1`] = `
   </div>
   <div
     data-name="floatingOverlay"
+    data-testid="overlay"
     style="display: none; outline: 1 solid #9fcabb; background-color: rgb(255, 255, 255); position: absolute; margin-top: 0px; width: 100%; box-sizing: border-box; z-index: 1000; box-shadow: 5px 5px 12px -2px rgba(0,0,0,0.39);"
   >
     <ul

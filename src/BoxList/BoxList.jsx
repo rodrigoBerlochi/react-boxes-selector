@@ -17,6 +17,7 @@ const BoxList = ({
                     <Box 
                         style={styles.Box} 
                         key={item.value}
+                        data-testid="selected-item"
                     >
                         <EllipseText 
                             length={maxWordLength}>

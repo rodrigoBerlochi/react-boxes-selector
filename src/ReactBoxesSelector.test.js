@@ -1,5 +1,5 @@
 import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+import { cleanup, render, fireEvent, wait, waitForDomChange } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'
 
 import BoxesSelector from './ReactBoxesSelector';
@@ -82,4 +82,4 @@ describe('React Boxes Selector', () => {
 
       expect(getByText('Ruby')).toBeInTheDocument();
   });
-})
+});

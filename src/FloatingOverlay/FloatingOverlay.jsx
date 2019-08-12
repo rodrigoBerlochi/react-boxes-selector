@@ -12,7 +12,8 @@ export const FloatingOverlay = ({
     const status = shouldOpen ? styles.isOpen : styles.isClosed;
     return (
         <div 
-            ref={overlayRef} 
+            ref={overlayRef}
+            data-testid="overlay"
             data-name="floatingOverlay"
             style={Object.assign({}, status, styles.container)}>
                 {children}
