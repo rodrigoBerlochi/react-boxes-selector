@@ -62,7 +62,7 @@
     "@wdio/spec-reporter": "^5.11.7",
     "@wdio/sync": "^5.11.13",
     "babel-loader": "^8.0.5",
-    "chromedriver": "^76.0.0",
+    "chromedriver": "^119.0.1",
     "cross-env": "^1.0.7",
     "eslint": "~5.14.1",
     "eslint-config-airbnb": "~17.1.0",
